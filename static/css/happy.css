@@ -1,0 +1,20 @@
+body {
+    background: radial-gradient(circle at top, rgba(255, 140, 66, 0.15), #08000f 60%) !important;
+}
+.playlist-hero {
+    border-color: rgba(255, 140, 66, 0.15) !important;
+    box-shadow: 0 15px 40px rgba(255, 140, 66, 0.08) !important;
+}
+#pageSub {
+    color: #ff9f43 !important;
+}
+#randomBtn {
+    background: linear-gradient(135deg, #ff9f43 0%, #ff5252 100%) !important;
+    box-shadow: 0 10px 25px rgba(255, 159, 67, 0.3) !important;
+}
+#randomBtn:hover {
+    box-shadow: 0 15px 30px rgba(255, 159, 67, 0.5) !important;
+}
+.song-artist {
+    color: #ff9f43 !important;
+}

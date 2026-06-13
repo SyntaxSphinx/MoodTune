@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* Base Styles & Typography */
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #08000f;
+    color: #f3f0f7;
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom Navbar with Glassmorphism */
+.navbar {
+    background: rgba(13, 0, 20, 0.75) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 60vh;
+    min-height: 450px;
+    background: radial-gradient(circle at top right, rgba(167, 139, 250, 0.15), transparent 60%),
+                radial-gradient(circle at bottom left, rgba(244, 114, 182, 0.15), transparent 60%),
+                #0d0014;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.hero-section.home-hero {
+    height: 82vh;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to top, #08000f, transparent);
+    pointer-events: none;
+}
+
+.vibrant-text {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, #ffffff 30%, #e9d5ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 10px 30px rgba(167, 139, 250, 0.15);
+}
+
+.hero-section p {
+    color: #9d8db2;
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-section .btn-light {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #0d0014;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 12px 30px;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-section .btn-light:hover {
+    transform: translateY(-3px);
+    background: #ffffff;
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Mood Selection Section */
+.mood-section {
+    background: #08000f;
+    padding: 80px 0;
+}
+
+.mood-section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 40px;
+}
+
+/* Premium Mood Cards */
+.mood-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    border-radius: 24px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.mood-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mood-card:hover::before {
+    opacity: 1;
+}
+
+.mood-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.mood-card .mood-icon {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mood-card:hover .mood-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Specific Mood Gradients & Glows */
+.mood-card.happy {
+    background: linear-gradient(135deg, #FFD166 0%, #FF8C42 100%);
+    box-shadow: 0 10px 25px rgba(255, 140, 66, 0.25);
+}
+.mood-card.happy:hover {
+    box-shadow: 0 20px 40px rgba(255, 140, 66, 0.45);
+}
+
+.mood-card.sad {
+    background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+    box-shadow: 0 10px 25px rgba(78, 67, 118, 0.3);
+}
+.mood-card.sad:hover {
+    box-shadow: 0 20px 40px rgba(78, 67, 118, 0.5);
+}
+
+.mood-card.energetic {
+    background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+    box-shadow: 0 10px 25px rgba(255, 75, 43, 0.25);
+}
+.mood-card.energetic:hover {
+    box-shadow: 0 20px 40px rgba(255, 75, 43, 0.45);
+}
+
+.mood-card.calm {
+    background: linear-gradient(135deg, #A8C0FF 0%, #3F2B96 100%);
+    box-shadow: 0 10px 25px rgba(63, 43, 150, 0.25);
+}
+.mood-card.calm:hover {
+    box-shadow: 0 20px 40px rgba(63, 43, 150, 0.45);
+}
+
+.mood-card.romantic {
+    background: linear-gradient(135deg, #ea00d9 0%, #711c91 100%);
+    box-shadow: 0 10px 25px rgba(113, 28, 145, 0.3);
+}
+.mood-card.romantic:hover {
+    box-shadow: 0 20px 40px rgba(113, 28, 145, 0.5);
+}
+
+.mood-card.chill {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    box-shadow: 0 10px 25px rgba(56, 239, 125, 0.25);
+}
+.mood-card.chill:hover {
+    box-shadow: 0 20px 40px rgba(56, 239, 125, 0.45);
+}
+
+/* Language Selection Page */
+.language-box {
+    background: rgba(20, 10, 35, 0.6) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 50px 40px;
+    border-radius: 28px;
+    margin-top: 10vh;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.language-box h3 {
+    letter-spacing: -0.5px;
+}
+
+.btn-lang {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 16px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: white !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
+    text-decoration: none;
+}
+
+.btn-lang:hover {
+    background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+#back {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #9d8db2 !important;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#back:hover {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(-3px);
+}
+
+/* Playlist & Song Cards */
+.playlist-hero {
+    background: linear-gradient(135deg, rgba(20, 10, 35, 0.8) 0%, rgba(13, 0, 20, 0.9) 100%) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+#pageTitle {
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #ffffff 40%, #e9d5ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#pageSub {
+    color: #a78bfa;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Play Random Button */
+#randomBtn {
+    background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+    color: white !important;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 35px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    display: inline-block;
+}
+
+#randomBtn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
+}
+
+/* Song list container */
+#songsList {
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Premium Song Card */
+.song-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 16px 24px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.song-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
+}
+
+.song-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff !important;
+    margin-bottom: 2px;
+}
+
+.song-artist {
+    font-size: 0.95rem;
+    color: #a78bfa !important;
+    font-weight: 500;
+}
+
+.play-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #0d0014 !important;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.play-btn:hover {
+    background: #ffffff;
+    transform: scale(1.15);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Floating frosted-glass player footer */
+#playerFooter {
+    background: rgba(13, 0, 20, 0.75) !important;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    padding: 20px !important;
+}
+
+#nowPlayingTitle {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#nowPlayingArtist {
+    color: #a78bfa !important;
+    font-weight: 500;
+}
+
+/* HTML Audio Player customization */
+audio {
+    filter: invert(1) hue-rotate(180deg);
+    border-radius: 30px;
+    outline: none;
+}
+
+/* Footer Copyright */
+footer.bg-dark {
+    background-color: #05000a !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 25px 0 !important;
+    color: #6d5f83 !important;
+    font-size: 0.9rem;
+}

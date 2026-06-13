@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Moods - MoodTune</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header data-bs-theme="dark"> 
+    <div class="navbar navbar-dark bg-dark shadow-sm"> 
+        <div class="container"> 
+            <a href="/" class="navbar-brand d-flex align-items-center"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-boombox me-2" viewBox="0 0 16 16">
+                    <path d="M2.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m7.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m1.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m-7-1a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm5.5 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                    <path d="M11.5 13a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m0-1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3M5 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                    <path d="M7 10.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0m-1 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
+                    <path d="M14 0a.5.5 0 0 1 .5.5V2h.5a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12.5V.5A.5.5 0 0 1 14 0M1 3v3h14V3zm14 4H1v7h14z"/>
+                </svg>
+                <strong>MoodTune</strong> 
+            </a> 
+        </div> 
+    </div> 
+</header>
+
+<!-- MOOD SELECTION HEADER -->
+<section class="py-5 text-center text-white" style="margin-top: 40px;">
+    <div class="container">
+        <h2 class="display-5 fw-bold text-white mb-2">How are you feeling today?</h2>
+        <p class="lead" style="color: #9d8db2;">Select a mood to find matching songs</p>
+    </div>
+</section>
+
+<!-- MOOD CARDS -->
+<section class="pb-5 mood-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-6 col-md-4">
+                <a href="language?mood=happy" class="mood-card happy text-decoration-none">
+                    <span class="mood-icon">😊</span>
+                    <span class="mood-name">Happy</span>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <a href="language?mood=sad" class="mood-card sad text-decoration-none">
+                    <span class="mood-icon">😔</span>
+                    <span class="mood-name">Sad</span>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <a href="language?mood=energetic" class="mood-card energetic text-decoration-none">
+                    <span class="mood-icon">⚡</span>
+                    <span class="mood-name">Energetic</span>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <a href="language?mood=calm" class="mood-card calm text-decoration-none">
+                    <span class="mood-icon">😌</span>
+                    <span class="mood-name">Calm</span>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <a href="language?mood=romantic" class="mood-card romantic text-decoration-none">
+                    <span class="mood-icon">💖</span>
+                    <span class="mood-name">Romantic</span>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <a href="language?mood=chill" class="mood-card chill text-decoration-none">
+                    <span class="mood-icon">🎧</span>
+                    <span class="mood-name">Chill</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="/" id="back">← Back to Home</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>© 2025 MoodTune — All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

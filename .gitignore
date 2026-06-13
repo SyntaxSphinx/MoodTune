@@ -1,0 +1,16 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment/system files
+.env
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+venv/
+env/
+ENV/
+.python-version
